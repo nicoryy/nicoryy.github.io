@@ -3,28 +3,22 @@ import hlogo from "../../assets/w-logo.png";
 
 const Nav = () => {
   return (
-    <header>
+    <header className="max-h-[120px]">
         <nav>
-            <div className="px-20 py-5 flex justify-between bg-blue-400">                                                                                
+            <div className="py-5 flex justify-between text-white uppercase">                                                                                
 
-            <div className="flex items-center bg-red-300">
-                <img className="w-56" src={hlogo} alt="horizontal_logo" />
-            </div>
+                <img className="w-56 " src={hlogo} alt="horizontal_logo" />
 
-            <div className="grid place-items-center bg-red-300">
-                <ul className="flex gap-10 items-center">
-                <li>Welcome</li>
-                <li>About Me</li>
-                <li>Portfolio</li>
-                <li>Services</li>
-                <li>Experience</li>
+                <ul className="flex gap-10  items-center">
+                  <li><a href="#welcome">Welcome</a></li>
+                  <li><a href="#About">About Me</a></li>
+                  <li><a href="#Portfolio">Portfolio</a></li>
+                  <li><a href="#Services">Services</a></li>
+                  <li><a href="#Experience">Experience</a></li>
                 </ul>
-            </div>
 
-            <div className="grid bg-red-300">
-                <button>Contact</button>
-            </div>
-
+                <button className=" uppercase my-auto py-3 px-8 bg-purple-900 rounded-md">Contact</button>
+                
             </div>
         </nav>
     </header>
