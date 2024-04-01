@@ -1,3 +1,4 @@
+import GotoBtn from "./components/GotoBtn";
 import Nav from "./components/Nav";
 
 function App() {
@@ -7,19 +8,22 @@ function App() {
         <Nav />
 
         <main className="text-white">
-          <div className="h-[calc(100vh-120px)] flex flex-col items-start justify-center pb-[120px]">
+          <section className="h-[calc(100vh-120px)] flex flex-col items-start justify-center pb-[120px]">
             <h2 className="text-gray-600 font-bold text-5xl">I'm a</h2>
 
-            <h1 className='font-bold text-7xl tracking-wider after:content-["."]'>
+            <h1
+              id="#Welcome"
+              className='font-bold text-7xl tracking-wider after:content-["."]'
+            >
               Full Stack <br />
               Website <br />
               Developer
             </h1>
 
-            <button className="bg-red-300">Previous Projects</button>
-          </div>
+            <GotoBtn goto="Project">Previous Project</GotoBtn>
+          </section>
 
-          <div className="h-fullvh">Abortar</div>
+          <section className="h-fullvh">Abortar</section>
         </main>
       </section>
     </>
