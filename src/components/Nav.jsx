@@ -9,7 +9,7 @@ const Nav = () => {
     const close = document.querySelector("#close");
     const nav = document.querySelector("#nav");
 
-    nav.classList.toggle("translate-y-60");
+    nav.classList.toggle("translate-y-[200%]");
     menu.classList.toggle("hidden");
     close.classList.toggle("hidden");
   }
@@ -23,11 +23,11 @@ const Nav = () => {
           id="nav"
           className="lg:static lg:min-h-fit absolute
           lg:bg-transparent bg-purple-600 min-h-[60vh] 
-          left-0 -translate-y-96 lg:w-auto w-[calc(100vw-10rem)]
-          flex items-center mx-20 justify-center
-          transition
-          duration-300
-            "
+          left-0 top-[-100%] lg:w-auto w-[calc(100vw-10rem)]
+          flex items-center justify-center
+          transition-transform rounded-lg duration-500 
+          lg:mx-0 mx-20 ease-out
+          "
         >
           <ul className="flex lg:gap-10 gap-8 lg:flex-row flex-col lg:items-center ">
             <li>
