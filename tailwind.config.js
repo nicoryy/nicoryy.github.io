@@ -35,6 +35,9 @@ export default {
         '11/12vh': '91.6666vh',
         'fullvh': '100vh',
       },
+      colors:{
+        'purple1': '#9f00c4'
+      }
     },
   },
   plugins: [],
