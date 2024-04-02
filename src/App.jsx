@@ -1,4 +1,3 @@
-import Card from "./components/Card";
 import GotoBtn from "./components/GotoBtn";
 import Nav from "./components/Nav";
 
@@ -27,13 +26,22 @@ function App() {
               Developer
             </h1>
 
-            <GotoBtn class="my-5" goto="Project">
+            <GotoBtn class="my-10" goto="Project">
               Previous Project
             </GotoBtn>
           </section>
 
-          <section id="About" className="h-fullvh">
-            abort
+          <section id="About" className="h-[100vh] bg-blue-400 flex 
+          justify-center items-center gap-[25%]
+          
+          ">
+            <section className="">
+              <img src="" alt="perfil_photo" />
+            </section>
+
+            <section className="">
+              
+            </section>
           </section>
         </main>
       </section>
