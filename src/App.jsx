@@ -8,7 +8,11 @@ function App() {
         <Nav />
 
         <main className="text-white">
-          <section className="h-[calc(100vh-120px)] flex flex-col items-start justify-center pb-[120px]">
+          <section
+            className="h-[calc(100vh-120px)] flex 
+            flex-col pb-10
+            items-start justify-center
+            ">
             <h2 className="text-gray-600 font-bold text-5xl">I'm a</h2>
 
             <h1
@@ -20,7 +24,9 @@ function App() {
               Developer
             </h1>
 
-            <GotoBtn goto="Project">Previous Project</GotoBtn>
+            <GotoBtn class="my-5" goto="Project">
+              Previous Project
+            </GotoBtn>
           </section>
 
           <section className="h-fullvh">Abortar</section>
