@@ -31,12 +31,16 @@ const Nav = () => {
         >
           <ul className="flex lg:gap-10 gap-8 lg:flex-row flex-col lg:items-center ">
             <li>
-              <a className="hover:text-purple-900 duration-300" href="#Welcome">
+              <a
+                onClick={()=>handleNavMenu()} 
+                className="hover:text-purple-900 duration-300" 
+                href="#Welcome">
                 Welcome
               </a>
             </li>
             <li>
               <a
+                onClick={()=>handleNavMenu()}
                 className=" hover:text-purple-900 duration-300 text-nowrap"
                 href="#About"
               >
@@ -45,6 +49,7 @@ const Nav = () => {
             </li>
             <li>
               <a
+                onClick={()=>handleNavMenu()}
                 className="hover:text-purple-900 duration-300"
                 href="#Portfolio"
               >
@@ -53,6 +58,7 @@ const Nav = () => {
             </li>
             <li>
               <a
+                onClick={()=>handleNavMenu()}
                 className="hover:text-purple-900 duration-300"
                 href="#Services"
               >
@@ -61,6 +67,7 @@ const Nav = () => {
             </li>
             <li>
               <a
+                onClick={()=>handleNavMenu()}
                 className="hover:text-purple-900 duration-300"
                 href="#Experience"
               >

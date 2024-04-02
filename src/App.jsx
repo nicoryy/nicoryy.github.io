@@ -1,5 +1,7 @@
+import Card from "./components/Card";
 import GotoBtn from "./components/GotoBtn";
 import Nav from "./components/Nav";
+
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
             className="h-[calc(100vh-120px)] flex 
             flex-col pb-10
             items-start justify-center
-            ">
+            "
+          >
             <h2 className="text-gray-600 font-bold text-5xl">I'm a</h2>
 
             <h1
@@ -29,7 +32,9 @@ function App() {
             </GotoBtn>
           </section>
 
-          <section className="h-fullvh">Abortar</section>
+          <section id="About" className="h-fullvh">
+            abort
+          </section>
         </main>
       </section>
     </>
