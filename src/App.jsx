@@ -50,7 +50,7 @@ function App() {
             <section className="flex flex-col lg:max-w-[40%] sm:max-w-[80%] gap-5">
               <span id="About" className="font-bold text-3xl lg:text-left sm:text-center uppercase">About Me</span>
 
-              <span className="text-justify">
+              <span className="text-justify text-gray-300">
                 I am a student of Mechatronics Engineering at the Federal
                 Institute of Education, Science, and Technology of Ceará (IFCE),
                 with a passion for technology and development. As a full-stack
