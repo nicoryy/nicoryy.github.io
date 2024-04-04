@@ -9,6 +9,7 @@ function App() {
         <Nav />
 
         <main className="text-white">
+          {/* // WELCOME SECTION */}
           <section
             className="h-[calc(100vh-120px)] flex 
             flex-col pb-10
@@ -31,10 +32,11 @@ function App() {
             </GotoBtn>
           </section>
 
+
+          {/* ABOUT ME SECTION  */}
           <section
-            id="About"
-            className="h-[100vh] flex 
-          justify-center items-center gap-20 
+            className="min-h-[100vh] flex lg:flex-row sm:flex-col
+          justify-center items-center lg:gap-20
           "
           >
             <section className="">
@@ -45,10 +47,10 @@ function App() {
               />
             </section>
 
-            <section className="flex flex-col max-w-[40%]  gap-5">
-              <span className="font-bold text-3xl uppercase">About Me</span>
+            <section className="flex flex-col lg:max-w-[40%] sm:max-w-[80%] gap-5">
+              <span id="About" className="font-bold text-3xl lg:text-left sm:text-center uppercase">About Me</span>
 
-              <span className="">
+              <span className="text-justify">
                 I am a student of Mechatronics Engineering at the Federal
                 Institute of Education, Science, and Technology of Ceará (IFCE),
                 with a passion for technology and development. As a full-stack
