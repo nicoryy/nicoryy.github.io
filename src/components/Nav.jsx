@@ -3,7 +3,7 @@ import hlogo from "../../assets/w-logo.png";
 import { IoIosClose, IoIosMenu } from "react-icons/io";
 import GotoBtn from "./GotoBtn";
 
-const Nav = () => {
+const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
   function handleNavMenu() {
     const menu = document.querySelector("#menu");
     const close = document.querySelector("#close");

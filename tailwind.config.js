@@ -37,6 +37,13 @@ export default {
       },
       colors:{
         'purple1': '#9f00c4'
+      },
+      dropShadow: {
+        '3xl': '50px 20px 20px rgba(72,31,81, 1)',
+        '4xl': [
+            '0 35px 35px rgba(0, 0, 0, 0.25)',
+            '0 45px 65px rgba(0, 0, 0, 0.15)'
+        ]
       }
     },
   },
