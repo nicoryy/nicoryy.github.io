@@ -16,11 +16,11 @@ function App() {
             items-start justify-center
             "
           >
-            <h2 className="text-gray-600 font-bold text-5xl 2xs:text-3xl">I'm a</h2>
+            <h2 className="text-gray-600 font-bold sm:text-5xl 2xs:text-3xl">I'm a</h2>
 
             <h1
               id="#Welcome"
-              className='font-bold text-7xl 2xs:text-5xl tracking-wider after:content-["."]'
+              className='font-bold sm:text-7xl 2xs:text-5xl tracking-wider after:content-["."]'
             >
               Full Stack <br />
               Website <br />
