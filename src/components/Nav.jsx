@@ -30,7 +30,7 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
           flex items-center justify-center
           transition-transform rounded-xl duration-500 
           lg:mx-0 mx-20 ease-out
-          2xs:mx-5 2xs:w-[calc(100vw-2.5rem)]
+          2xs:mx-5 2xs:w-[calc(100vw-2.5rem)] 2xs:top-[-105%]
           "
         >
           <ul className="flex lg:gap-10 gap-14 lg:flex-row 
