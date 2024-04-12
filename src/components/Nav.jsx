@@ -15,7 +15,10 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
   }
 
   return (
-    <header className="max-h-[120px] w-[calc(100vw-10rem)]">
+    <header className="max-h-[120px] 
+      w-[calc(100vw-10rem)]
+      max-xs:w-full
+      ">
       <nav className=" py-5 flex items-center mx-auto justify-between text-white uppercase">
         <img className="w-56" src={hlogo} alt="horizontal_logo" />
 
@@ -25,22 +28,24 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
           lg:bg-transparent bg-purple-600 min-h-[60vh] 
           left-0 top-[-100%] lg:w-auto w-[calc(100vw-10rem)]
           flex items-center justify-center
-          transition-transform rounded-lg duration-500 
+          transition-transform rounded-xl duration-500 
           lg:mx-0 mx-20 ease-out
+          2xs:mx-5 2xs:w-[calc(100vw-2.5rem)]
           "
         >
-          <ul className="flex lg:gap-10 gap-8 lg:flex-row flex-col lg:items-center ">
+          <ul className="flex lg:gap-10 gap-14 lg:flex-row 
+          flex-col lg:items-center text-center">
             <li>
               <a
-                onClick={()=>handleNavMenu()} 
-                className="hover:text-purple-900 duration-300" 
+                onClick={() => handleNavMenu()}
+                className="hover:text-purple-900 duration-300"
                 href="#Welcome">
                 Welcome
               </a>
             </li>
             <li>
               <a
-                onClick={()=>handleNavMenu()}
+                onClick={() => handleNavMenu()}
                 className=" hover:text-purple-900 duration-300 text-nowrap"
                 href="#About"
               >
@@ -49,7 +54,7 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
             </li>
             <li>
               <a
-                onClick={()=>handleNavMenu()}
+                onClick={() => handleNavMenu()}
                 className="hover:text-purple-900 duration-300"
                 href="#Portfolio"
               >
@@ -58,7 +63,7 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
             </li>
             <li>
               <a
-                onClick={()=>handleNavMenu()}
+                onClick={() => handleNavMenu()}
                 className="hover:text-purple-900 duration-300"
                 href="#Services"
               >
@@ -67,7 +72,7 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
             </li>
             <li>
               <a
-                onClick={()=>handleNavMenu()}
+                onClick={() => handleNavMenu()}
                 className="hover:text-purple-900 duration-300"
                 href="#Experience"
               >
@@ -81,7 +86,7 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
           {/* <button className="hover:text-purple-900 hover:bg-purple-200 duration-300 uppercase my-auto py-3 px-8 bg-purple-900 rounded-lg">
             Contact
           </button> */}
-          <GotoBtn goto="contato">Contato</GotoBtn>
+          <GotoBtn class="max-[425px]:hidden" goto="contato">Contato</GotoBtn>
           <IoIosMenu
             id="menu"
             onClick={(e) => handleNavMenu(e)}

@@ -5,7 +5,7 @@ import profile from "../assets/profile20000.png";
 function App() {
   return (
     <>
-      <section className="bg-[#170a1a] px-20">
+      <section className="bg-[#170a1a] sm:px-20 max-xs:px-5">
         <Nav />
 
         <main className="text-white">
@@ -16,11 +16,11 @@ function App() {
             items-start justify-center
             "
           >
-            <h2 className="text-gray-600 font-bold text-5xl">I'm a</h2>
+            <h2 className="text-gray-600 font-bold text-5xl 2xs:text-3xl">I'm a</h2>
 
             <h1
               id="#Welcome"
-              className='font-bold text-7xl tracking-wider after:content-["."]'
+              className='font-bold text-7xl 2xs:text-5xl tracking-wider after:content-["."]'
             >
               Full Stack <br />
               Website <br />
@@ -36,7 +36,7 @@ function App() {
           {/* ABOUT ME SECTION  */}
           <section
             className="min-h-[100vh] flex lg:flex-row sm:flex-col
-          justify-center items-center lg:gap-20
+          justify-center items-center lg:gap-20 2xs:flex-col
           "
           >
             <section className="">
@@ -48,7 +48,9 @@ function App() {
             </section>
 
             <section className="flex flex-col lg:max-w-[40%] sm:max-w-[80%] gap-5">
-              <span id="About" className="font-bold text-3xl lg:text-left sm:text-center uppercase">About Me</span>
+              <span id="About" className="font-bold text-3xl lg:text-left 
+              sm:text-center uppercase">
+                About Me</span>
 
               <span className="text-justify text-gray-300">
                 I am a student of Mechatronics Engineering at the Federal
@@ -63,7 +65,7 @@ function App() {
                 professional.
               </span>
 
-              <section className="flex gap-10 justify-between">
+              <section className="flex gap-10 justify-between 2xs:gap-2">
                 <GotoBtn goto="contato" class="px-[15%]">Hire</GotoBtn>
 
                 <GotoBtn class="px-[15%] ">Resume</GotoBtn>
