@@ -1,6 +1,7 @@
 import GotoBtn from "./components/GotoBtn";
 import Nav from "./components/Nav";
 import profile from "../assets/profile20000.png";
+import TabPortfolio from "./components/TabPortfolio";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
             items-start justify-center
             "
           >
-            <h2 className="text-gray-600 font-bold sm:text-5xl 2xs:text-3xl">I'm a</h2>
+            <h2 className="text-gray-600 font-bold sm:text-5xl 2xs:text-3xl">
+              I'm a
+            </h2>
 
             <h1
               id="#Welcome"
@@ -32,11 +35,10 @@ function App() {
             </GotoBtn>
           </section>
 
-
           {/* ABOUT ME SECTION  */}
           <section
             className="min-h-[100vh] flex lg:flex-row sm:flex-col
-          justify-center items-center lg:gap-20 2xs:flex-col
+          justify-center items-center lg:gap-40 2xs:flex-col
           "
           >
             <section className="">
@@ -48,9 +50,13 @@ function App() {
             </section>
 
             <section className="flex flex-col lg:max-w-[40%] sm:max-w-[80%] gap-5">
-              <span id="About" className="font-bold text-3xl lg:text-left 
-              sm:text-center uppercase">
-                About Me</span>
+              <span
+                id="About"
+                className="font-bold text-3xl lg:text-left 
+              sm:text-center uppercase"
+              >
+                About Me
+              </span>
 
               <span className="text-justify text-gray-300">
                 I am a student of Mechatronics Engineering at the Federal
@@ -66,11 +72,20 @@ function App() {
               </span>
 
               <section className="flex gap-10 justify-between 2xs:gap-2">
-                <GotoBtn goto="contato" class="px-[15%]">Hire</GotoBtn>
+                <GotoBtn goto="contato" class="px-[15%]">
+                  Hire
+                </GotoBtn>
 
                 <GotoBtn class="px-[15%] ">Resume</GotoBtn>
               </section>
             </section>
+          </section>
+
+          {/* PORTFOLIO SECTION */}
+          <section id="Portfolio" className="flex flex-col gap-10 min-h-[100vh] text-center">
+            <span className="text-3xl font-bold uppercase my-10">Portfolio</span>
+
+            <TabPortfolio />
           </section>
         </main>
       </section>
