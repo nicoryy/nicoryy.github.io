@@ -3,7 +3,8 @@ import hlogo from "../../assets/w-logo.png";
 import { IoIosClose, IoIosMenu } from "react-icons/io";
 import GotoBtn from "./GotoBtn";
 
-const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
+const Nav = () => {
+  // GOTA FIX THIS ON LAPTOP WIDTH
   function handleNavMenu() {
     const menu = document.querySelector("#menu");
     const close = document.querySelector("#close");
@@ -15,10 +16,12 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
   }
 
   return (
-    <header className="max-h-[120px] 
+    <header
+      className="max-h-[120px] 
       w-[calc(100vw-10rem)]
       max-xs:w-full
-      ">
+      "
+    >
       <nav className=" py-5 flex items-center mx-auto justify-between text-white uppercase">
         <img className="w-56" src={hlogo} alt="horizontal_logo" />
 
@@ -33,13 +36,16 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
           2xs:mx-5 2xs:w-[calc(100vw-2.5rem)] 2xs:top-[-105%]
           "
         >
-          <ul className="flex lg:gap-10 gap-14 lg:flex-row 
-          flex-col lg:items-center text-center">
+          <ul
+            className="flex lg:gap-10 gap-14 lg:flex-row 
+          flex-col lg:items-center text-center"
+          >
             <li>
               <a
                 onClick={() => handleNavMenu()}
                 className="hover:text-purple-900 duration-300"
-                href="#Welcome">
+                href="#Welcome"
+              >
                 Welcome
               </a>
             </li>
@@ -86,7 +92,9 @@ const Nav = () => {  // GOTA FIX THIS ON LAPTOP WIDTH
           {/* <button className="hover:text-purple-900 hover:bg-purple-200 duration-300 uppercase my-auto py-3 px-8 bg-purple-900 rounded-lg">
             Contact
           </button> */}
-          <GotoBtn class="max-[425px]:hidden" goto="contato">Contato</GotoBtn>
+          <GotoBtn class="max-[425px]:hidden" goto="contato">
+            Contato
+          </GotoBtn>
           <IoIosMenu
             id="menu"
             onClick={(e) => handleNavMenu(e)}

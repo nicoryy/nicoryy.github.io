@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import GotoBtn from "./GotoBtn";
 
-
 const TabPortfolio = (props) => {
   return (
     <section className="min-h-[100vh] ">
@@ -34,7 +33,9 @@ const TabPortfolio = (props) => {
                   : "flex flex-col gap-1 items-start"
               }
             >
-              <span className="text-2xl font-thin uppercase text-purple-700">Project {project.id}</span>
+              <span className="text-2xl font-thin uppercase text-purple-700">
+                Project {project.id}
+              </span>
               <span className="text-3xl font-bold">{project.title}</span>
             </div>
             <span
