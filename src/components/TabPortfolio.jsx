@@ -3,56 +3,8 @@ import GotoBtn from "./GotoBtn";
 
 
 const TabPortfolio = (props) => {
-  const [activeTab, setActiveTab] = useState(1);
-
-  const handleTab = (index) => {
-    setActiveTab(index);
-  };
-
   return (
     <section className="min-h-[100vh] ">
-      {/* selection tab */}
-      <div className="mb-16">
-        <ul className="flex gap-10 justify-center">
-          <li
-            onClick={() => {
-              handleTab(1);
-            }}
-            className={
-              activeTab === 1
-                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
-                : "text-xl cursor-pointer"
-            }
-          >
-            Mobile App
-          </li>
-          <li
-            onClick={() => {
-              handleTab(2);
-            }}
-            className={
-              activeTab === 2
-                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
-                : "text-xl cursor-pointer"
-            }
-          >
-            Website
-          </li>
-          <li
-            onClick={() => {
-              handleTab(3);
-            }}
-            className={
-              activeTab === 3
-                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
-                : "text-xl cursor-pointer"
-            }
-          >
-            Desktop
-          </li>
-        </ul>
-      </div>
-
       {/* content tab */}
       {props.data.map((project) => (
         <section

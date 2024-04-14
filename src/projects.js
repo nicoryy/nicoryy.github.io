@@ -22,3 +22,21 @@ export const mobile = [
     link:'https://github.com/nicoryy/el_chancho_menu'
   },
 ]
+
+export const website = [
+  { id: 3,
+    pic: elchancho,
+    title: "ElChancho Cumim App",
+    desc: "An original ideia to make an app to take orders of costumers for Waitress helper that hasn't the Order Machine. The main purpose was that it makes it easier to receive orders on busy days, where writing on paper would take a lot of time for larger orders. Unfortunally it isn't fully completed because i've been fired. ",
+    link:'https://github.com/nicoryy/el_chancho_menu'
+  },
+]
+
+export const desktop = [
+  { id: 2,
+    pic: todo,
+    title: "To Do App",
+    desc: "Most Front than Back project. It is a simple ToDo app that i made it in a FullStack Course By InfinitySchool. Project it is not fully completed. Basic Ui Design to have a simple apparence and easy to use.",
+    link:'https://github.com/nicoryy/To-do-List-React-Native'
+  },
+]

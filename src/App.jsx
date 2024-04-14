@@ -2,10 +2,15 @@ import GotoBtn from "./components/GotoBtn";
 import Nav from "./components/Nav";
 import profile from "../assets/profile20000.png";
 import TabPortfolio from "./components/TabPortfolio";
-
-import { mobile } from "./projects";
+import { mobile, website, desktop } from "./projects";
+import { useState } from "react";
 
 function App() {
+  const [activeTab, setActiveTab] = useState(1);
+
+  const handleTab = (index) => {
+    setActiveTab(index);
+  };
   return (
     <>
       <section className="bg-[#170a1a] sm:px-20 max-xs:px-5">
@@ -92,7 +97,55 @@ function App() {
               Portfolio
             </span>
 
-            <TabPortfolio data={mobile}  />
+            {/* selection tab */}
+            <div className="mb-16">
+              <ul className="flex gap-10 justify-center">
+                <li
+                  onClick={() => {
+                    handleTab(1);
+                  }}
+                  className={
+                    activeTab === 1
+                      ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
+                      : "text-xl cursor-pointer"
+                  }
+                >
+                  Mobile App
+                </li>
+                <li
+                  onClick={() => {
+                    handleTab(2);
+                  }}
+                  className={
+                    activeTab === 2
+                      ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
+                      : "text-xl cursor-pointer"
+                  }
+                >
+                  Website
+                </li>
+                <li
+                  onClick={() => {
+                    handleTab(3);
+                  }}
+                  className={
+                    activeTab === 3
+                      ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
+                      : "text-xl cursor-pointer"
+                  }
+                >
+                  Desktop
+                </li>
+              </ul>
+            </div>
+
+            {activeTab === 1 ? (
+              <TabPortfolio data={mobile} />
+            ) : activeTab === 2 ? (
+              <TabPortfolio data={website} />
+            ) : (
+              <TabPortfolio data={desktop} />
+            )}
           </section>
         </main>
       </section>
