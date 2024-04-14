@@ -7,7 +7,7 @@ import { mobile } from "../projects";
 const TabPortfolio = () => {
   const [activeTab, setActiveTab] = useState(1);
 
-  console.log(mobile);
+
 
   const handleTab = (index) => {
     setActiveTab(index);
@@ -58,31 +58,22 @@ const TabPortfolio = () => {
       </div>
 
       {/* content tab */}
-      <section className="flex flex-col gap-20">
-        {/* project component */}
-        {mobile.map((project) => (
-          <div className="flex gap-5  max-h-80">
-            <section className="grid place-items-center ">
-              <img
-                className=" rounded-2xl"
-                src={project.pic}
-                alt="imgpic"
-              />
-            </section>
+      {mobile.map((project) => (
+        <section className={project.id % 2 === 0 ? 'flex flex-row-reverse mb-10 gap-10 mx-20': 'flex mb-10 gap-10 mx-20'}>
+          <img src={project.pic} alt="imgpic" className="w-[30rem] rounded-lg" />
 
-            <section className="flex flex-col  text-left justify-between">
-              <span className="font-thin text-3xl">Project {project.id}</span>
-              <span className="font-bold text-3xl">{project.title}</span>
-
-              <span className="w-[80%] text-justify">{project.desc}</span>
-
-              <span>
-                <GotoBtn goto={project.link}>Read More</GotoBtn>
-              </span>
-            </section>
+          <div className={project.id % 2 === 0 ? "flex flex-col items-end justify-between" : "flex flex-col items-start justify-between"}>
+            <div className={project.id % 2 === 0 ? "flex flex-col gap-1 items-end" : "flex flex-col gap-1 items-start"}>
+              <span className="text-2xl font-thin">Project {project.id}</span>
+              <span className="text-3xl font-bold">{project.title}</span>
+            </div>
+            <span className={project.id % 2 === 0 ? "w-96 text-right md:text-sm lg:text-base": "w-96 text-left md:text-sm lg:text-base"}>
+              {project.desc}
+            </span>
+            <GotoBtn goto={project.link} >Read more</GotoBtn>
           </div>
-        ))}
-      </section>
+        </section>
+      ))}
     </section>
   );
 };
