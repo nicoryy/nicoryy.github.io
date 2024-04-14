@@ -3,6 +3,8 @@ import Nav from "./components/Nav";
 import profile from "../assets/profile20000.png";
 import TabPortfolio from "./components/TabPortfolio";
 
+import { mobile } from "./projects";
+
 function App() {
   return (
     <>
@@ -82,10 +84,15 @@ function App() {
           </section>
 
           {/* PORTFOLIO SECTION */}
-          <section id="Portfolio" className="flex flex-col gap-10 min-h-[100vh] text-center">
-            <span className="text-3xl font-bold uppercase my-10">Portfolio</span>
+          <section
+            id="Portfolio"
+            className="flex flex-col gap-10 min-h-[100vh] text-center"
+          >
+            <span className="text-3xl font-bold uppercase my-10">
+              Portfolio
+            </span>
 
-            <TabPortfolio />
+            <TabPortfolio data={mobile}  />
           </section>
         </main>
       </section>

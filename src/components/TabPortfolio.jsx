@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import GotoBtn from "./GotoBtn";
 
-import { mobile } from "../projects";
 
-const TabPortfolio = () => {
+const TabPortfolio = (props) => {
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTab = (index) => {
     setActiveTab(index);
   };
+
   return (
     <section className="min-h-[100vh] ">
       {/* selection tab */}
@@ -54,7 +54,7 @@ const TabPortfolio = () => {
       </div>
 
       {/* content tab */}
-      {mobile.map((project) => (
+      {props.data.map((project) => (
         <section
           className={
             project.id % 2 === 0
@@ -65,7 +65,7 @@ const TabPortfolio = () => {
           <img
             src={project.pic}
             alt="imgpic"
-            className="w-[30rem] rounded-lg"
+            className="w-[30rem] rounded-lg drop-shadow-2xl"
           />
 
           <div
@@ -82,14 +82,14 @@ const TabPortfolio = () => {
                   : "flex flex-col gap-1 items-start"
               }
             >
-              <span className="text-2xl font-thin">Project {project.id}</span>
+              <span className="text-2xl font-thin uppercase text-purple-700">Project {project.id}</span>
               <span className="text-3xl font-bold">{project.title}</span>
             </div>
             <span
               className={
                 project.id % 2 === 0
-                  ? "w-96 text-right md:text-sm lg:text-base"
-                  : "w-96 text-left md:text-sm lg:text-base"
+                  ? "w-96 text-right md:text-sm lg:text-base text-gray-400"
+                  : "w-96 text-left md:text-sm lg:text-base text-gray-400"
               }
             >
               {project.desc}
