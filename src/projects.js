@@ -30,7 +30,7 @@ export const mobile = [
 
 export const website = [
   {
-    id: 2,
+    id: 1,
     pic: password,
     title: "Password Generator React",
     desc: " Is an application that allows users to generate secure passwords based on certain criteria. This type of project typically includes features such as the ability to specify the password length, choose which types of characters (uppercase letters, lowercase letters, numbers, and special characters) should be included, and generate a password based on the chosen options.",
@@ -40,7 +40,7 @@ export const website = [
 
 export const desktop = [
   {
-    id: 2,
+    id: 1,
     pic: password,
     title: "Password Generator React",
     desc: " Is an application that allows users to generate secure passwords based on certain criteria. This type of project typically includes features such as the ability to specify the password length, choose which types of characters (uppercase letters, lowercase letters, numbers, and special characters) should be included, and generate a password based on the chosen options.",
