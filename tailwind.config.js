@@ -39,8 +39,8 @@ export default {
         'purple1': '#9f00c4'
       },
       dropShadow: {
-        '2xl': '25px 10px 10px rgba(72,31,81, 1)',
-        '3xl': '50px 20px 20px rgba(72,31,81, 1)',
+        '2xl': '25px 7px 10px rgba(72,31,81, 1)',
+        '3xl': '20px 7px 5px rgba(72,31,81, 1)',
         '4xl': [
             '0 35px 35px rgba(0, 0, 0, 0.25)',
             '0 45px 65px rgba(0, 0, 0, 0.15)'
@@ -50,6 +50,9 @@ export default {
         'xs': '426px',
         '2xs': '320px',
       },
+      gridTemplateColumns: {
+        'auto':'repeat(auto-fit,minmax(min(16.25rem,100%),1fr))'
+      }
     },
   },
   plugins: [],

@@ -4,6 +4,8 @@ import profile from "../assets/profile20000.png";
 import TabPortfolio from "./components/TabPortfolio";
 import { mobile, website, desktop } from "./projects";
 import { useState } from "react";
+import Cards from "./components/Cards";
+
 
 function App() {
   const [activeTab, setActiveTab] = useState(1);
@@ -146,6 +148,13 @@ function App() {
             ) : (
               <TabPortfolio data={desktop} />
             )}
+          </section>
+
+          {/* SERVICES SECTION */}
+          <section id="Services" className="">
+            <p className="text-3xl uppercase text-center font-bold">Services</p>
+
+            <Cards/>
           </section>
         </main>
       </section>
