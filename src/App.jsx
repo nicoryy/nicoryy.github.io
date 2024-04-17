@@ -16,7 +16,7 @@ function App() {
   };
   return (
     <>
-      <section className="bg-[#170a1a] sm:px-20 max-xs:px-5">
+      <section className="bg-[#170a1a] sm:px-20 max-xs:px-5  selection:bg-pink-500 selection:text-red-300">
         <Nav />
 
         <main className="text-white">
