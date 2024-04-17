@@ -4,6 +4,7 @@ import logo from "../../assets/w-name.png";
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiLinkedin } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -49,6 +50,11 @@ const Footer = () => {
           <li>
             <a target="blank" href="https://github.com/nicoryy">
               <FaGithub className="size-7" />
+            </a>
+          </li>
+          <li>
+            <a target="blank" href="mailto:pedronicory@gmail.com">
+              <MdEmail className="size-7" />
             </a>
           </li>
         </ul>
