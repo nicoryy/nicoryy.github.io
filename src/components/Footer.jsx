@@ -7,10 +7,14 @@ import { SiLinkedin } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <footer className="text-white text-sm -mx-20 bg-purple-950 px-20 py-5">
-      <section className="flex justify-between items-center">
+    <footer
+    id="contact"
+      className="text-white md:text-sm max-2xs:text-xs 
+      md:-mx-20 bg-purple-950 md:px-20 py-5 2xs:px-10 2xs:-mx-5 "
+    >
+      <section className="flex justify-between items-center max-md:flex-col text-center">
         <img className="w-40" src={logo} alt="logo" />
-        <ul className="flex gap-5 ">
+        <ul className="flex gap-5 max-md:flex-col">
           <li>
             <a href="#Welcome">Welcome</a>
           </li>
@@ -28,10 +32,10 @@ const Footer = () => {
           </li>
         </ul>
       </section>
-      <hr className="border-purple-900 my-5" />
-      <section className="flex justify-between">
+      <hr className="border-purple-900 my-5 " />
+      <section className="flex justify-between 2xs:flex-col text-center md:flex-row ">
         <p className="">2024 - Pedro Nicory - All rights reserved</p>
-        <ul className="flex gap-5">
+        <ul className="flex gap-5 justify-center 2xs:mt-5 md:mt-0" >
           <li>
             <a target="blank" href="https://instagram.com/pedr_ncry">
               <FaInstagram className="size-7" />

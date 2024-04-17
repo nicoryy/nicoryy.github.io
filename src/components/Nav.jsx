@@ -92,8 +92,8 @@ const Nav = () => {
           {/* <button className="hover:text-purple-900 hover:bg-purple-200 duration-300 uppercase my-auto py-3 px-8 bg-purple-900 rounded-lg">
             Contact
           </button> */}
-          <GotoBtn class="max-[425px]:hidden" goto="contato">
-            Contato
+          <GotoBtn class="max-[425px]:hidden" goto="#contact">
+            Contact
           </GotoBtn>
           <IoIosMenu
             id="menu"

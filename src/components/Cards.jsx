@@ -10,7 +10,7 @@ const Card = () => {
 
     <section className=" py-10 grid grid-cols-auto place-items-center gap-10 ">
 
-      <section className='duration-1000 min-w-80 min-h-52 rounded-3xl p-1 shadow-lg shadow-purple-400 bg-purple-600'>
+      <section className='duration-1000 min-w-80 min-h-52 rounded-3xl p-1 shadow-lg shadow-purple-400 bg-purple-600 2xs:min-w-52'>
         <article className='rounded-3xl grid place-items-center p-5 gap-5 bg-purple-700 w-full h-full p3'>
           <span className='flex items-center gap-2 w-full justify-center'>
             <span className='bg-white p-3 rounded-full'>
@@ -26,7 +26,7 @@ const Card = () => {
         </article>
       </section>
 
-      <section className='duration-1000 min-w-80 min-h-52 rounded-3xl p-1 shadow-lg shadow-purple-400 bg-purple-600'>
+      <section className='duration-1000 min-w-80 min-h-52 rounded-3xl p-1 shadow-lg shadow-purple-400 bg-purple-600 2xs:min-w-52'>
         <article className='rounded-3xl grid place-items-center p-5 gap-5 bg-purple-700 w-full h-full p3'>
           <span className='flex items-center gap-2 w-full justify-center'>
             <span className='bg-white p-3 rounded-full'>
@@ -42,7 +42,7 @@ const Card = () => {
         </article>
       </section>
 
-      <section className='duration-1000 min-w-80 min-h-52 rounded-3xl p-1 shadow-lg shadow-purple-400 bg-purple-600'>
+      <section className='duration-1000 min-w-80 min-h-52 rounded-3xl p-1 shadow-lg shadow-purple-400 bg-purple-600 2xs:min-w-52'>
         <article className='rounded-3xl grid place-items-center p-5 gap-5 bg-purple-700 w-full h-full p3'>
           <span className='flex items-center gap-2 w-full justify-center'>
             <span className='bg-white p-3 rounded-full'>

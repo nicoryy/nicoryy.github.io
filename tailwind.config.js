@@ -48,7 +48,7 @@ export default {
         "2xs": "320px",
       },
       gridTemplateColumns: {
-        auto: "repeat(auto-fit,minmax(min(16.25rem,100%),1fr))",
+        auto: "repeat(auto-fit,minmax(min(20.25rem,100%),1fr))",
       },
       keyframes: {
         wave:{
