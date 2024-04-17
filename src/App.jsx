@@ -5,6 +5,7 @@ import TabPortfolio from "./components/TabPortfolio";
 import { mobile, website, desktop } from "./projects";
 import { useState } from "react";
 import Cards from "./components/Cards";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -133,7 +134,7 @@ function App() {
                   className={
                     activeTab === 3
                       ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
-                      : "text-xl cursor-pointer"
+                      : "text-xl cursor-pointer hidden"
                   }
                 >
                   Desktop
@@ -157,6 +158,7 @@ function App() {
             <Cards/>
           </section>
         </main>
+        <Footer/>
       </section>
     </>
   );
