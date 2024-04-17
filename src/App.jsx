@@ -40,7 +40,7 @@ function App() {
               Developer
             </h1>
 
-            <GotoBtn class="my-10" goto="Project">
+            <GotoBtn class="my-10" goto="#Portfolio">
               Previous Project
             </GotoBtn>
 
@@ -88,11 +88,11 @@ function App() {
               </span>
 
               <section className="flex gap-10 justify-between 2xs:gap-2">
-                <GotoBtn goto="contato" class="px-[15%]">
+                <GotoBtn goto="#contact" class="px-[15%]">
                   Hire
                 </GotoBtn>
 
-                <GotoBtn class="px-[15%] ">Resume</GotoBtn>
+                <GotoBtn goto='https://www.linkedin.com/in/nicoryy' class="px-[15%] ">Resume</GotoBtn>
               </section>
             </section>
           </section>
