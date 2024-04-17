@@ -178,7 +178,7 @@ function App() {
           </section>
 
           {/* EXPERIENCE SECTION */}
-          <section id='Experience' className="text-center my-20">
+          <section id="Experience" className="text-center my-20">
             <p className="font-bold text-3xl uppercase mb-32"> experiences</p>
             <ul className="grid place-items-center md:grid-cols-4 2xs:grid-cols-2 gap-20">
               <li className="flex flex-col gap-2 items-center">
