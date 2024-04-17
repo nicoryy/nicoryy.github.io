@@ -6,6 +6,7 @@ import { mobile, website, desktop } from "./projects";
 import { useState } from "react";
 import Cards from "./components/Cards";
 import Footer from "./components/Footer";
+import imgmobile from "../assets/mobile.png";
 
 function App() {
   const [activeTab, setActiveTab] = useState(1);
@@ -42,6 +43,12 @@ function App() {
             <GotoBtn class="my-10" goto="Project">
               Previous Project
             </GotoBtn>
+
+            <img
+              src={imgmobile}
+              alt="img mobile"
+              className="absolute size-[30rem] right-0 lg:mr-[25%] sm:-right-64 2xs:max-lg:hidden object-contain animate-waving"
+            />
           </section>
 
           {/* ABOUT ME SECTION  */}
@@ -151,7 +158,7 @@ function App() {
           </section>
 
           {/* SERVICES SECTION */}
-          <section id="Services" className="">
+          <section id="Services" className=" mb-10 mt-20">
             <p className="text-3xl uppercase text-center font-bold">Services</p>
 
             <Cards />
