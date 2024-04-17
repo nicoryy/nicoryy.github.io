@@ -7,7 +7,6 @@ import { useState } from "react";
 import Cards from "./components/Cards";
 import Footer from "./components/Footer";
 
-
 function App() {
   const [activeTab, setActiveTab] = useState(1);
 
@@ -155,10 +154,10 @@ function App() {
           <section id="Services" className="">
             <p className="text-3xl uppercase text-center font-bold">Services</p>
 
-            <Cards/>
+            <Cards />
           </section>
         </main>
-        <Footer/>
+        <Footer />
       </section>
     </>
   );
