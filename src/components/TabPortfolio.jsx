@@ -7,6 +7,7 @@ const TabPortfolio = (props) => {
       {/* content tab */}
       {props.data.map((project) => (
         <section
+          key={project.id}
           className={
             project.id % 2 === 0
             ? " flex lg:flex-row-reverse mb-10 gap-10 lg:mx-20 2xs:mx-2 2xs:flex-col"

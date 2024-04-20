@@ -10,7 +10,7 @@ const Nav = () => {
     const close = document.querySelector("#close");
     const nav = document.querySelector("#nav");
 
-    nav.classList.toggle("translate-y-[200%]");
+    nav.classList.toggle("2xs:translate-y-[200%]");
     menu.classList.toggle("hidden");
     close.classList.toggle("hidden");
   }
@@ -34,6 +34,7 @@ const Nav = () => {
           transition-transform rounded-xl duration-500 
           lg:mx-0 mx-20 ease-out
           2xs:mx-5 2xs:w-[calc(100vw-2.5rem)] 2xs:top-[-105%]
+          lg:translate-y-[0%]
           "
         >
           <ul
