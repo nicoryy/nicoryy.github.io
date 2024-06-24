@@ -1,7 +1,7 @@
 import React from "react";
 import hlogo from "../../assets/w-logo.png";
 import { IoIosClose, IoIosMenu } from "react-icons/io";
-import GotoBtn from "./GotoBtn";
+import GotoBtn from "../components/GotoBtn";
 
 const Nav = () => {
   // GOTA FIX THIS ON LAPTOP WIDTH

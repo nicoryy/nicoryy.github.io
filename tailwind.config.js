@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily:{
+        'display':['JetBrains Mono', 'sans-serif']
+      },
       height: {
         "1/2vh": "50vh",
         "1/3vh": "33.3333vh",
