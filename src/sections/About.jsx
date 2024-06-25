@@ -5,19 +5,15 @@ import profile from "../../assets/profile20000.png";
 const About = () => {
   return (
     <section
-      className="min-h-[100vh] flex lg:flex-row sm:flex-col
-          justify-center items-center lg:gap-40 2xs:flex-col"
+      className="min-h-[100vh] flex lg:flex-row justify-center items-center lg:gap-40 flex-col"
       id="About"
     >
       <section className="">
         <img src={profile} alt="perfil_photo" className="drop-shadow-3xl" />
       </section>
 
-      <section className="flex flex-col lg:max-w-[40%] sm:max-w-[80%] gap-5">
-        <span
-          className="font-bold text-3xl lg:text-left 
-              sm:text-center uppercase"
-        >
+      <section className="flex flex-col lg:w-[40%] gap-5">
+        <span className="font-bold text-3xl lg:text-left text-center uppercase">
           About Me
         </span>
 
@@ -33,8 +29,11 @@ const About = () => {
           as a professional.
         </span>
 
-        <section className="flex gap-10 justify-between 2xs:gap-2">
-          <GotoBtn goto="https://drive.google.com/file/d/1ta1-8-tO8oahJcQoiOpZZww547-OuOZZ/view?usp=sharing" class="px-[15%] ">
+        <section className="flex lg:gap-10 justify-between gap-2">
+          <GotoBtn
+            goto="https://drive.google.com/file/d/1ta1-8-tO8oahJcQoiOpZZww547-OuOZZ/view?usp=sharing"
+            class="px-[15%] "
+          >
             Resume
           </GotoBtn>
         </section>
