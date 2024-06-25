@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "JetBrains Mono";
-    src: url("/fonts/JetBrains\ Mono/JetBrainsMono-Light.woff2");
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains\ Mono/JetBrainsMono-Medium.woff2");
 }

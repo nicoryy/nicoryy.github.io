@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <section className="h-[calc(100vh-120px)] grid lg:grid-cols-2 place-items-center">
       <div className="lg:w-[32rem] w-full">
-        <h2 className="text-gray-600 font-bold sm:text-5xl 2xs:text-3xl">
+        <h2 className="text-gray-600 font-bold lg:text-5xl text-3xl">
           I'm a
         </h2>
 
