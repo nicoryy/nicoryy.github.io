@@ -9,7 +9,7 @@ import Experience from "./sections/Experience";
 function App() {
   return (
     <>
-      <section className="bg-[#0B0518] font-display sm:px-20 max-xs:px-5 selection:bg-pink-500 selection:text-red-300">
+      <section className="bg-bgpurple font-display sm:px-20 max-xs:px-5 selection:bg-pink-500 selection:text-red-300">
         <Nav />
 
         <main className="text-white">

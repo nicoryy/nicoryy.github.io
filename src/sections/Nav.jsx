@@ -44,7 +44,7 @@ const Nav = () => {
             <li>
               <a
                 onClick={() => handleNavMenu()}
-                className="hover:text-purple-900 duration-300"
+                className="hover:text-subpurple ease-in transition duration-300"
                 href="#Welcome"
               >
                 Welcome
@@ -53,7 +53,7 @@ const Nav = () => {
             <li>
               <a
                 onClick={() => handleNavMenu()}
-                className=" hover:text-purple-900 duration-300 text-nowrap"
+                className=" hover:text-subpurple ease-in transition duration-300 text-nowrap"
                 href="#About"
               >
                 About Me
@@ -62,7 +62,7 @@ const Nav = () => {
             <li>
               <a
                 onClick={() => handleNavMenu()}
-                className="hover:text-purple-900 duration-300"
+                className="hover:text-subpurple ease-in transition duration-300"
                 href="#Portfolio"
               >
                 Portfolio
@@ -71,7 +71,7 @@ const Nav = () => {
             <li>
               <a
                 onClick={() => handleNavMenu()}
-                className="hover:text-purple-900 duration-300"
+                className="hover:text-subpurple ease-in transition duration-300"
                 href="#Services"
               >
                 Services
@@ -80,7 +80,7 @@ const Nav = () => {
             <li>
               <a
                 onClick={() => handleNavMenu()}
-                className="hover:text-purple-900 duration-300"
+                className="hover:text-subpurple ease-in transition duration-300"
                 href="#Experience"
               >
                 Experience

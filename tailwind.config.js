@@ -40,11 +40,7 @@ export default {
       },
       dropShadow: {
         "2xl": "25px 7px 10px rgba(72,31,81, 1)",
-        "3xl": "20px 7px 5px rgba(72,31,81, 1)",
-        "4xl": [
-          "0 35px 35px rgba(0, 0, 0, 0.25)",
-          "0 45px 65px rgba(0, 0, 0, 0.15)",
-        ],
+        "3xl": "20px 7px 5px #5426B7",
       },
       screens: {
         xs: "426px",
@@ -67,6 +63,11 @@ export default {
       },
       animation:{
         'waving': 'wave 100s linear infinite'
+      },
+      colors:{
+        'bgpurple':'#0B0518',
+        'purple':'#5426B7',
+        'subpurple':'#946fe1'
       }
     },
   },

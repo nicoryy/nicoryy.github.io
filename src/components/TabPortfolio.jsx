@@ -10,14 +10,14 @@ const TabPortfolio = (props) => {
           key={project.id}
           className={
             project.id % 2 === 0
-            ? " flex lg:flex-row-reverse mb-10 gap-10 lg:mx-20 2xs:mx-2 2xs:flex-col"
-            : " flex lg:flex-row mb-10 gap-10 lg:mx-20 2xs:mx-2 2xs:flex-col"
+              ? " flex lg:flex-row-reverse mb-10 gap-10 lg:mx-20 2xs:mx-2 2xs:flex-col"
+              : " flex lg:flex-row mb-10 gap-10 lg:mx-20 2xs:mx-2 2xs:flex-col"
           }
         >
           <img
             src={project.pic}
             alt="imgpic"
-            className="lg:w-[30rem] rounded-lg drop-shadow-2xl 2xs:w-full"
+            className="lg:w-[30rem] rounded-lg drop-shadow-3xl 2xs:w-full"
           />
 
           <div

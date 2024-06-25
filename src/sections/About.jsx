@@ -6,8 +6,8 @@ const About = () => {
   return (
     <section
       className="min-h-[100vh] flex lg:flex-row sm:flex-col
-          justify-center items-center lg:gap-40 2xs:flex-col
-          "
+          justify-center items-center lg:gap-40 2xs:flex-col"
+      id="About"
     >
       <section className="">
         <img src={profile} alt="perfil_photo" className="drop-shadow-3xl" />
@@ -15,7 +15,6 @@ const About = () => {
 
       <section className="flex flex-col lg:max-w-[40%] sm:max-w-[80%] gap-5">
         <span
-          id="About"
           className="font-bold text-3xl lg:text-left 
               sm:text-center uppercase"
         >
@@ -35,11 +34,7 @@ const About = () => {
         </span>
 
         <section className="flex gap-10 justify-between 2xs:gap-2">
-          <GotoBtn goto="#contact" class="px-[15%]">
-            Hire
-          </GotoBtn>
-
-          <GotoBtn goto="https://www.linkedin.com/in/nicoryy" class="px-[15%] ">
+          <GotoBtn goto="https://drive.google.com/file/d/1ta1-8-tO8oahJcQoiOpZZww547-OuOZZ/view?usp=sharing" class="px-[15%] ">
             Resume
           </GotoBtn>
         </section>

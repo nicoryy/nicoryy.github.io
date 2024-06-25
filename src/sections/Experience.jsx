@@ -4,8 +4,10 @@ import tail from "../../assets/icons8-tailwind-css-512.png";
 import express from "../../assets/icons8-expresso-js-512.png";
 import python from "../../assets/python.png";
 import mongodb from "../../assets/icons8-mongodb-512.png";
-import native from "../../assets/development.png";
+import native from "../../assets/sdk-react-native.svg";
 import js from "../../assets/js.png";
+import ts from "../../assets/icons8-typescript-96.png";
+import vercel from "../../assets/vercel-logo-svgrepo-com.svg";
 
 const Experience = () => {
   return (
@@ -43,6 +45,14 @@ const Experience = () => {
         <li className="flex flex-col gap-2 items-center">
           <img className="size-16" src={js} alt="reactimg" />
           <p className="text-gray-400 text-xl">JavaScript</p>
+        </li>
+        <li className="flex flex-col gap-2 items-center">
+          <img className="size-16" src={ts} alt="reactimg" />
+          <p className="text-gray-400 text-xl">TypeScript</p>
+        </li>
+        <li className="flex flex-col gap-2 items-center">
+          <img className="size-16" src={vercel} alt="reactimg" />
+          <p className="text-gray-400 text-xl">Vercel</p>
         </li>
       </ul>
     </section>
