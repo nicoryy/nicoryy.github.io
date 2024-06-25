@@ -10,14 +10,14 @@ const TabPortfolio = (props) => {
           key={project.id}
           className={
             project.id % 2 === 0
-              ? " flex lg:flex-row-reverse mb-10 gap-10 lg:mx-20 2xs:mx-2 2xs:flex-col"
-              : " flex lg:flex-row mb-10 gap-10 lg:mx-20 2xs:mx-2 2xs:flex-col"
+              ? " flex lg:flex-row-reverse mb-10 gap-10 lg:mx-20 mx-2 flex-col"
+              : " flex lg:flex-row mb-10 gap-10 lg:mx-20 mx-2 flex-col"
           }
         >
           <img
             src={project.pic}
             alt="imgpic"
-            className="lg:w-[30rem] rounded-lg drop-shadow-3xl 2xs:w-full"
+            className="lg:w-[30rem] rounded-lg drop-shadow-3xl w-full"
           />
 
           <div
@@ -42,8 +42,8 @@ const TabPortfolio = (props) => {
             <span
               className={
                 project.id % 2 === 0
-                  ? "lg:w-96 2xs:my-5 lg:my-0 text-right md:text-sm lg:text-base text-gray-400 2xs:w-full"
-                  : "lg:w-96 2xs:my-5 lg:my-0 text-left md:text-sm lg:text-base text-gray-400 2xs:w-full"
+                  ? "lg:w-96 my-5 lg:my-0 text-right md:text-sm lg:text-base text-gray-400 w-full"
+                  : "lg:w-96 my-5 lg:my-0 text-left md:text-sm lg:text-base text-gray-400 w-full"
               }
             >
               {project.desc}

@@ -6,9 +6,9 @@ const GotoBtn = (props) => {
       href={`${props.goto}`}
       className={`hover:text-purple-900
       hover:bg-subpurple
-      duration-500 uppercase sm:py-3 sm:px-8 
+      duration-500 uppercase lg:py-3 lg:px-8 
       bg-purple
-      rounded-lg 2xs:py-2 2xs:px-7 ${props.class}`}
+      rounded-lg py-2 px-7 ${props.class}`}
     >
       {props.children}
     </a>
