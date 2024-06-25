@@ -24,7 +24,7 @@ const Portfolio = () => {
             }}
             className={
               activeTab === 1
-                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
+                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
                 : "text-xl cursor-pointer"
             }
           >
@@ -36,7 +36,7 @@ const Portfolio = () => {
             }}
             className={
               activeTab === 2
-                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
+                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
                 : "text-xl cursor-pointer"
             }
           >
@@ -48,7 +48,7 @@ const Portfolio = () => {
             }}
             className={
               activeTab === 3
-                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple-800"
+                ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
                 : "text-xl cursor-pointer hidden"
             }
           >

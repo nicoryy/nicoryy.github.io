@@ -2,7 +2,8 @@ import travel from "../assets/TravelUi App.png";
 import todo from "../assets/ToDo React.png";
 import elchancho from "../assets/elChancho.png";
 
-import password from '../assets/Password Generator React.png'
+import lel from "../assets/lel.png";
+import password from "../assets/Password Generator React.png";
 
 export const mobile = [
   {
@@ -35,6 +36,13 @@ export const website = [
     title: "Password Generator React",
     desc: " Is an application that allows users to generate secure passwords based on certain criteria. This type of project typically includes features such as the ability to specify the password length, choose which types of characters (uppercase letters, lowercase letters, numbers, and special characters) should be included, and generate a password based on the chosen options.",
     link: "https://github.com/nicoryy/password_generator_react",
+  },
+  {
+    id: 2,
+    pic: lel,
+    title: "L&L Assessoria e Serviços",
+    desc: "Website built with Typescript and ViteJs backended in express.js. Comercial website in contract",
+    link: "https://llassessoriaeservicos.com.br",
   },
 ];
 
