@@ -60,7 +60,7 @@ const Portfolio = () => {
       {activeTab === 1 ? (
         <TabPortfolio data={mobile} />
       ) : activeTab === 2 ? (
-        <TabPortfolio data={website} /> 
+        <TabPortfolio data={website} />
       ) : (
         <TabPortfolio data={desktop} />
       )}

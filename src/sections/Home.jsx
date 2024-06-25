@@ -7,17 +7,17 @@ import { FiLinkedin } from "react-icons/fi";
 import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
-
   const typewriter = Typewriter({
-    words:["Full Stack Website Developer .",
+    words: [
+      "Full Stack Website Developer .",
       "Mobile Developer .",
-      "Person named Pedro Nicory 😉"
+      "Person named Pedro Nicory 😉",
     ],
-    cursorBlinking:true,
-    cursor:true,
-    typeSpeed:100,
-    loop:true
-  })
+    cursorBlinking: true,
+    cursor: true,
+    typeSpeed: 100,
+    loop: true,
+  });
 
   return (
     <section className="h-[calc(100vh-120px)] grid grid-cols-2 place-items-center">
@@ -28,7 +28,7 @@ const Home = () => {
 
         <h1
           id="#Welcome"
-          className='font-bold sm:text-7xl 2xs:text-5xl tracking-wider'
+          className="font-bold sm:text-7xl 2xs:text-5xl tracking-wider"
         >
           {typewriter}
         </h1>

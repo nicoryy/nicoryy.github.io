@@ -34,7 +34,10 @@ const About = () => {
         </span>
 
         <section className="flex gap-10 justify-between 2xs:gap-2">
-          <GotoBtn goto="https://drive.google.com/file/d/1ta1-8-tO8oahJcQoiOpZZww547-OuOZZ/view?usp=sharing" class="px-[15%] ">
+          <GotoBtn
+            goto="https://drive.google.com/file/d/1ta1-8-tO8oahJcQoiOpZZww547-OuOZZ/view?usp=sharing"
+            class="px-[15%] "
+          >
             Resume
           </GotoBtn>
         </section>
