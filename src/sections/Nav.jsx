@@ -1,49 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import hlogo from "../../assets/w-logo.png";
 import { IoIosClose, IoIosMenu } from "react-icons/io";
 import GotoBtn from "../components/GotoBtn";
+import { FaArrowUp } from "react-icons/fa";
 
 const Nav = () => {
-  // GOTA FIX THIS ON LAPTOP WIDTH
-  function handleNavMenu() {
-    const menu = document.querySelector("#menu");
-    const close = document.querySelector("#close");
-    const nav = document.querySelector("#nav");
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-    nav.classList.toggle("2xs:translate-y-[200%]");
-    menu.classList.toggle("hidden");
-    close.classList.toggle("hidden");
-  }
+  const toggleVisibility = () => {
+    if (window.scrollY > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
   return (
-    <header
-      className="max-h-[120px] 
-      w-[calc(100vw-10rem)]
-      max-xs:w-full
-      "
-    >
+    <header className="h-[120px] w-[calc(100vw-10rem)] lg:w-full relative ">
+      <FaArrowUp
+        onClick={() => scrollToTop()}
+        className={`lg:bottom-20 lg:right-20 bottom-10 right-10 bg-subpurple p-2 rounded-md fixed z-50 transition duration-500 ease-in-out ${
+          isVisible ? "translate-x-0" : "translate-x-40"
+        }`}
+        size={40}
+        color="white"
+      />
       <nav className=" py-5 flex items-center mx-auto justify-between text-white uppercase">
         <img className="w-56" src={hlogo} alt="horizontal_logo" />
 
         <section
           id="nav"
-          className="lg:static lg:min-h-fit absolute
-          lg:bg-transparent bg-purple-600 min-h-[60vh] 
-          left-0 top-[-100%] lg:w-auto w-[calc(100vw-10rem)]
-          flex items-center justify-center
-          transition-transform rounded-xl duration-500 
-          lg:mx-0 mx-20 ease-out
-          2xs:mx-5 2xs:w-[calc(100vw-2.5rem)] 2xs:top-[-105%]
-          lg:translate-y-[0%]
-          "
+          className={`lg:static bg-purple lg:bg-transparent z-50 m-auto top-0 left-0 right-0 bottom-0 grid place-items-center fixed transition duration-1000 ease-in-out
+            ${
+              isMenuOpen
+                ? "translate-y-0"
+                : "lg:inline-block translate-y-[calc(100%+5rem)] lg:translate-y-0"
+            }`}
         >
-          <ul
-            className="flex lg:gap-10 gap-14 lg:flex-row 
-          flex-col lg:items-center text-center"
-          >
+          <ul className="lg:flex lg:flex-row grid lg:items-center text-center lg:gap-10 gap-14 ">
             <li>
               <a
-                onClick={() => handleNavMenu()}
+                onClick={() => {
+                  setMenuOpen(!isMenuOpen);
+                }}
                 className="hover:text-subpurple ease-in transition duration-300"
                 href="#Welcome"
               >
@@ -52,7 +65,9 @@ const Nav = () => {
             </li>
             <li>
               <a
-                onClick={() => handleNavMenu()}
+                onClick={() => {
+                  setMenuOpen(!isMenuOpen);
+                }}
                 className=" hover:text-subpurple ease-in transition duration-300 text-nowrap"
                 href="#About"
               >
@@ -61,7 +76,9 @@ const Nav = () => {
             </li>
             <li>
               <a
-                onClick={() => handleNavMenu()}
+                onClick={() => {
+                  setMenuOpen(!isMenuOpen);
+                }}
                 className="hover:text-subpurple ease-in transition duration-300"
                 href="#Portfolio"
               >
@@ -70,7 +87,9 @@ const Nav = () => {
             </li>
             <li>
               <a
-                onClick={() => handleNavMenu()}
+                onClick={() => {
+                  setMenuOpen(!isMenuOpen);
+                }}
                 className="hover:text-subpurple ease-in transition duration-300"
                 href="#Services"
               >
@@ -79,7 +98,9 @@ const Nav = () => {
             </li>
             <li>
               <a
-                onClick={() => handleNavMenu()}
+                onClick={() => {
+                  setMenuOpen(!isMenuOpen);
+                }}
                 className="hover:text-subpurple ease-in transition duration-300"
                 href="#Experience"
               >
@@ -87,26 +108,25 @@ const Nav = () => {
               </a>
             </li>
           </ul>
+          <IoIosClose
+            onClick={() => {
+              setMenuOpen(!isMenuOpen);
+            }}
+            size={50}
+            className="cursor-pointer lg:hidden z-50 fixed bottom-10 bg-subpurple rounded-full left-1/2 transform -translate-x-1/2"
+          />
         </section>
 
         <section className="flex gap-5">
-          {/* <button className="hover:text-purple-900 hover:bg-purple-200 duration-300 uppercase my-auto py-3 px-8 bg-purple-900 rounded-lg">
-            Contact
-          </button> */}
-          <GotoBtn class="max-[425px]:hidden" goto="#contact">
+          <GotoBtn class="hidden lg:inline" goto="#contact">
             Contact
           </GotoBtn>
           <IoIosMenu
-            id="menu"
-            onClick={(e) => handleNavMenu(e)}
+            onClick={() => {
+              setMenuOpen(!isMenuOpen);
+            }}
             size={40}
-            className="cursor-pointer lg:hidden"
-          />
-          <IoIosClose
-            id="close"
-            onClick={(e) => handleNavMenu(e)}
-            size={40}
-            className="cursor-pointer hidden lg:hidden"
+            className="cursor-pointer lg:hidden absolute top-10 -right-20"
           />
         </section>
       </nav>
