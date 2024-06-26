@@ -30,16 +30,16 @@ const Nav = () => {
     };
   }, []);
   return (
-    <header className="h-[120px] w-[calc(100vw-10rem)] lg:w-full relative ">
+    <header className="h-[120px] relative">
       <FaArrowUp
         onClick={() => scrollToTop()}
-        className={`lg:bottom-20 lg:right-20 bottom-10 right-10 bg-subpurple p-2 rounded-md fixed z-50 transition duration-500 ease-in-out ${
+        className={`lg:bottom-20 lg:right-20 bottom-10 right-10 bg-purple p-2 rounded-md fixed z-50 transition duration-500 ease-in-out bg-opacity-50 ${
           isVisible ? "translate-x-0" : "translate-x-40"
         }`}
         size={40}
         color="white"
       />
-      <nav className=" py-5 flex items-center mx-auto justify-between text-white uppercase">
+      <nav className=" py-5 flex items-center justify-between text-white uppercase">
         <img className="w-56" src={hlogo} alt="horizontal_logo" />
 
         <section
@@ -126,7 +126,7 @@ const Nav = () => {
               setMenuOpen(!isMenuOpen);
             }}
             size={40}
-            className="cursor-pointer lg:hidden absolute top-10 -right-20"
+            className="cursor-pointer lg:hidden"
           />
         </section>
       </nav>
