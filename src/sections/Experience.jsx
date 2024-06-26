@@ -13,7 +13,7 @@ const Experience = () => {
   return (
     <section id="Experience" className="text-center my-20">
       <p className="font-bold text-3xl uppercase mb-32"> experiences</p>
-      <ul className="grid place-items-center md:grid-cols-4 2xs:grid-cols-2 gap-20">
+      <ul className="grid place-items-center lg:grid-cols-4 grid-cols-2 gap-20">
         <li className="flex flex-col gap-2 items-center">
           <img className="size-16" src={react} alt="reactimg" />
           <p className="text-gray-400 text-xl">React.Js</p>
