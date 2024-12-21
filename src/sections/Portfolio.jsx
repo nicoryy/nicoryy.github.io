@@ -1,13 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TabPortfolio from "../components/TabPortfolio";
-import { mobile, website, desktop } from "../projects";
+import fetchGitHubData from "../api/github-api";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [mobile, setMobile] = useState([]);
+  const [website, setWebsite] = useState([]);
+  const [desktop, setDesktop] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const fetch = await fetchGitHubData("nicoryy");
+        if (!fetch) throw new Error("Failed to fetch data");
+
+        setMobile(fetch.mobile || []);
+        setWebsite(fetch.web || []);
+        setDesktop(fetch.desktop || []);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleTab = (index) => {
     setActiveTab(index);
   };
+
   return (
     <section
       id="Portfolio"
@@ -15,13 +40,10 @@ const Portfolio = () => {
     >
       <span className="text-3xl font-bold uppercase my-10">Portfolio</span>
 
-      {/* selection tab */}
       <div className="mb-16">
         <ul className="flex gap-10 justify-center">
           <li
-            onClick={() => {
-              handleTab(1);
-            }}
+            onClick={() => handleTab(1)}
             className={
               activeTab === 1
                 ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
@@ -31,9 +53,7 @@ const Portfolio = () => {
             Mobile App
           </li>
           <li
-            onClick={() => {
-              handleTab(2);
-            }}
+            onClick={() => handleTab(2)}
             className={
               activeTab === 2
                 ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
@@ -43,9 +63,7 @@ const Portfolio = () => {
             Website
           </li>
           <li
-            onClick={() => {
-              handleTab(3);
-            }}
+            onClick={() => handleTab(3)}
             className={
               activeTab === 3
                 ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
@@ -57,7 +75,9 @@ const Portfolio = () => {
         </ul>
       </div>
 
-      {activeTab === 1 ? (
+      {loading ? (
+        <div>Loading...</div>
+      ) : activeTab === 1 ? (
         <TabPortfolio data={mobile} />
       ) : activeTab === 2 ? (
         <TabPortfolio data={website} />
