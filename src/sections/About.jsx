@@ -31,6 +31,7 @@ const About = () => {
 
         <section className="flex lg:gap-10 justify-between gap-2">
           <GotoBtn
+            link
             goto="https://drive.google.com/file/d/1ta1-8-tO8oahJcQoiOpZZww547-OuOZZ/view?usp=sharing"
             class="px-[15%] "
           >

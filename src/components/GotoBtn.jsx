@@ -3,6 +3,7 @@ import React from "react";
 const GotoBtn = (props) => {
   return (
     <a
+      target={props.link ? "_blank" : "_self"}
       href={`${props.goto}`}
       className={`hover:text-purple-900
       hover:bg-subpurple

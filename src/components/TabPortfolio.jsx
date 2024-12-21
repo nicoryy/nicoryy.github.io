@@ -54,7 +54,7 @@ const TabPortfolio = (props) => {
             >
               {project?.description}
             </span>
-            <GotoBtn goto={project?.url}>Visit it!</GotoBtn>
+            <GotoBtn link goto={project?.url}>Visit it!</GotoBtn>
           </div>
         </section>
       ))}
