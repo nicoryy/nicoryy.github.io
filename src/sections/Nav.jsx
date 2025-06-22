@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import hlogo from "../../assets/w-logo.png";
+import hlogo from "../../assets/logos/w-logo.png";
 import { IoIosClose, IoIosMenu } from "react-icons/io";
 import GotoBtn from "../components/GotoBtn";
 import { FaArrowUp } from "react-icons/fa";
