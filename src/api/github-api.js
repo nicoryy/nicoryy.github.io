@@ -72,8 +72,8 @@ const fetchGitHubData = async (username) => {
         description: repo.description,
         url: repo.url,
         profileImage:
-          `https://raw.githubusercontent.com/nicoryy/${repo.name}/refs/heads/main/public/profile.png` ??
-          `https://raw.githubusercontent.com/nicoryy/${repo.name}/refs/heads/master/public/profile.png` ??
+        `https://raw.githubusercontent.com/nicoryy/${repo.name}/refs/heads/master/public/profile.png` ??
+        `https://raw.githubusercontent.com/nicoryy/${repo.name}/refs/heads/main/public/profile.png` ??
           null,
       })),
       web: webRepos.map((repo) => ({
