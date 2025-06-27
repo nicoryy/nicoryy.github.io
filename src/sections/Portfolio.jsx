@@ -43,7 +43,7 @@ const Portfolio = () => {
       <div className="mb-16">
         <ul className="flex gap-10 justify-center">
           <li
-            onClick={() => handleTab(2)}
+            onClick={() => handleTab(1)}
             className={
               activeTab === 1
                 ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
@@ -53,7 +53,7 @@ const Portfolio = () => {
             Website
           </li>
           <li
-            onClick={() => handleTab(1)}
+            onClick={() => handleTab(2)}
             className={
               activeTab === 2
                 ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
@@ -67,7 +67,7 @@ const Portfolio = () => {
             className={
               activeTab === 3
                 ? "text-xl cursor-pointer border-b-4 rounded-xl pb-2 border-purple"
-                : "text-xl cursor-pointer hidden"
+                : "text-xl cursor-pointer"
             }
           >
             Desktop
