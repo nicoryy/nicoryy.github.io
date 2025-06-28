@@ -9,6 +9,7 @@ import vercel from "../../assets/experiences/vercel.svg";
 import next from "../../assets/experiences/nextjs.png";
 import supabase from '../../assets/experiences/supabase.png';
 import shadcn from '../../assets/experiences/shadcn-ui.png';
+import electron from "../../assets/experiences/electron.svg";
 
 const Experience = () => {
   return (
@@ -26,6 +27,10 @@ const Experience = () => {
         <li className="flex flex-col gap-2 items-center">
           <img className="size-16 bg-white/70 rounded-3xl p-3" src={shadcn} alt="shadcn" />
           <p className="text-gray-400 text-xl">ShadCn</p>
+        </li>
+        <li className="flex flex-col gap-2 items-center">
+          <img className="size-16" src={electron} alt="electron" />
+          <p className="text-gray-400 text-xl">Electron Js</p>
         </li>
         <li className="flex flex-col gap-2 items-center">
           <img className="size-16" src={ts} alt="typescript" />
