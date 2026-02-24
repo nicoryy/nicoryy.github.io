@@ -9,7 +9,7 @@ const About = () => {
       id="About"
     >
       <section className="">
-        <img src={profile} alt="perfil_photo" className="drop-shadow-3xl" />
+        <img src={profile} alt="perfil_photo" className="drop-shadow-3xl rounded-full" />
       </section>
 
       <section className="flex flex-col lg:w-[40%] gap-5">
@@ -18,15 +18,13 @@ const About = () => {
         </span>
 
         <span className="text-justify text-gray-300">
-          I am a student of Mechatronics Engineering at the Federal Institute of
-          Education, Science, and Technology of Ceará (IFCE), with a passion for
-          technology and development. As a full-stack developer, I have
-          experience and skills in React, React Native, JavaScript, Python, and
-          Node.js. Throughout my academic and professional journey, I have
-          constantly sought to enhance my skills and knowledge, both in theory
-          and in practice. I am always open to new learning opportunities and
-          collaboration, eager to tackle future challenges and continue growing
-          as a professional.
+          Systems analysis and development student at the Unifanor WYDEN and Full-Stack Developer with experience in web and mobile software development.
+
+          I design and implement scalable digital solutions focused on performance, usability, and business impact. My technical stack includes React, React Native, JavaScript, Python, and Node.js, enabling end-to-end product development — from architecture design to deployment.
+
+          My core competency is translating operational gaps into structured, technology-driven solutions. If there is inefficiency, rework, or lack of integration within a process, system, or workflow, I build the mechanism to resolve it.
+
+          I operate with a continuous improvement mindset, combining engineering fundamentals with practical execution to deliver measurable results.
         </span>
 
         <section className="flex lg:gap-10 justify-between gap-2">
