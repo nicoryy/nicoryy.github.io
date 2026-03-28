@@ -1,100 +1,80 @@
-import React from "react";
-import logo from "../../assets/logos/w-name.png";
-
-import { FaInstagram } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { SiLinkedin } from "react-icons/si";
+import { personal, navLinks } from "../data/personal";
+import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FiLinkedin } from "react-icons/fi";
 import { MdEmail } from "react-icons/md";
 
-const Footer = () => {
-  return (
-    <footer
-      id="contact"
-      className="text-white lg:text-sm text-xs lg:-mx-20 bg-purple-950 lg:px-20 py-5 px-10 -mx-5 "
-    >
-      <section className="flex justify-between items-center flex-col lg:flex-row text-center">
-        <img className="w-40" src={logo} alt="logo" />
-        <ul className="lg:flex gap-5 grid grid-cols-5 lg:flex-row">
-          <li>
-            <a className="hover:text-purple transition ease-in" href="#Welcome">
-              Welcome
-            </a>
-          </li>
-          <li>
-            <a className="hover:text-purple transition ease-in" href="#About">
-              About Me
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-purple transition ease-in"
-              href="#Portfolio"
-            >
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-purple transition ease-in"
-              href="#Services"
-            >
-              Services
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-purple transition ease-in"
-              href="#Experience"
-            >
-              Experience
-            </a>
-          </li>
+const Footer = () => (
+  <footer id="contact" className="bg-surface border-t border-border">
+    <div className="max-w-6xl mx-auto px-6 lg:px-10 py-10">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+        {/* Logo */}
+        <a
+          href="#hero"
+          className="text-lg font-bold tracking-widest text-text-primary hover:text-primary transition-colors duration-300"
+        >
+          NICORY<span className="text-primary">.</span>
+        </a>
+
+        {/* Nav */}
+        <ul className="flex flex-wrap justify-center gap-6">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="text-sm text-text-muted hover:text-text-primary transition-colors duration-300"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
-      </section>
-      <hr className="border-purple-900 my-5 " />
-      <section className="flex justify-between flex-col text-center lg:flex-row ">
-        <p className="">2024 - Pedro Nicory - All rights reserved</p>
-        <ul className="flex gap-5 justify-center mt-5 lg:mt-0">
-          <li>
-            <a
-              className="hover:text-purple transition ease-in"
-              target="blank"
-              href="https://instagram.com/pedr_ncry"
-            >
-              <FaInstagram className="size-7" />
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-purple transition ease-in"
-              target="blank"
-              href="https://linkedin.com/in/nicoryy"
-            >
-              <SiLinkedin className="size-7" />
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-purple transition ease-in"
-              target="blank"
-              href="https://github.com/nicoryy"
-            >
-              <FaGithub className="size-7" />
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-purple transition ease-in"
-              target="blank"
-              href="mailto:pedronicory@gmail.com"
-            >
-              <MdEmail className="size-7" />
-            </a>
-          </li>
-        </ul>
-      </section>
-    </footer>
-  );
-};
+
+        {/* Socials */}
+        <div className="flex gap-4">
+          <a
+            href={personal.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-text-muted hover:text-primary transition-colors duration-300"
+          >
+            <FaInstagram size={19} />
+          </a>
+          <a
+            href={personal.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-text-muted hover:text-primary transition-colors duration-300"
+          >
+            <FiLinkedin size={19} />
+          </a>
+          <a
+            href={personal.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="text-text-muted hover:text-primary transition-colors duration-300"
+          >
+            <FaGithub size={19} />
+          </a>
+          <a
+            href={personal.social.email}
+            aria-label="Email"
+            className="text-text-muted hover:text-primary transition-colors duration-300"
+          >
+            <MdEmail size={19} />
+          </a>
+        </div>
+      </div>
+
+      <hr className="border-border my-6" />
+
+      <p className="text-center text-xs text-text-muted">
+        2025 — Pedro Nicory — All rights reserved
+      </p>
+    </div>
+  </footer>
+);
 
 export default Footer;

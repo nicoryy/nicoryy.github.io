@@ -1,36 +1,22 @@
 import Nav from "./sections/Nav";
-import Footer from "./sections/Footer";
-import Services from "./sections/Services";
-import Home from "./sections/Home";
-import Portfolio from "./sections/Portfolio";
+import Hero from "./sections/Hero";
 import About from "./sections/About";
-import Experience from "./sections/Experience";
+import Portfolio from "./sections/Portfolio";
+import TechStack from "./sections/TechStack";
+import Footer from "./sections/Footer";
 
 function App() {
   return (
-    <>
-      <section className="bg-bgpurple font-display sm:px-20 max-xs:px-5 selection:bg-pink-500 selection:text-red-300">
-        <Nav />
-
-        <main className="text-white">
-          {/* // WELCOME SECTION */}
-          <Home />
-
-          {/* ABOUT ME SECTION  */}
-          <About />
-
-          {/* PORTFOLIO SECTION */}
-          <Portfolio />
-
-          {/* SERVICES SECTION */}
-          <Services />
-
-          {/* EXPERIENCE SECTION */}
-          <Experience />
-        </main>
-        <Footer />
-      </section>
-    </>
+    <div className="bg-base font-display text-text-primary">
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Portfolio />
+        <TechStack />
+      </main>
+      <Footer />
+    </div>
   );
 }
 

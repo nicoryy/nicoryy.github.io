@@ -1,44 +1,58 @@
-import React from "react";
-import GotoBtn from "../components/GotoBtn";
 import profile from "../../assets/profile20000.png";
+import Button from "../components/ui/Button";
+import SectionTitle from "../components/ui/SectionTitle";
+import { personal } from "../data/personal";
+import { MdFileDownload } from "react-icons/md";
 
-const About = () => {
-  return (
-    <section
-      className="min-h-[100vh] flex lg:flex-row justify-center items-center lg:gap-40 flex-col"
-      id="About"
-    >
-      <section className="">
-        <img src={profile} alt="perfil_photo" className="drop-shadow-3xl rounded-full" />
-      </section>
+const About = () => (
+  <section id="about" className="py-24">
+    <div className="max-w-6xl mx-auto px-6 lg:px-10">
+      <SectionTitle>about me</SectionTitle>
 
-      <section className="flex flex-col lg:w-[40%] gap-5">
-        <span className="font-bold text-3xl lg:text-left text-center uppercase">
-          About Me
-        </span>
+      <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center lg:items-start">
+        {/* Photo */}
+        <div className="relative flex-shrink-0">
+          <div className="absolute inset-0 rounded-2xl bg-primary/20 blur-2xl scale-110 -z-10" />
+          <img
+            src={profile}
+            alt="Pedro Nicory"
+            className="w-56 lg:w-64 rounded-2xl border border-border object-cover"
+          />
+          {/* Available badge */}
+          <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-surface border border-border px-4 py-2 rounded-full text-xs whitespace-nowrap">
+            <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0 pulse-dot" />
+            <span className="text-text-muted">Disponível para projetos</span>
+          </div>
+        </div>
 
-        <span className="text-justify text-gray-300">
-          Systems analysis and development student at the Unifanor WYDEN and Full-Stack Developer with experience in web and mobile software development.
+        {/* Text */}
+        <div className="flex flex-col gap-5 lg:max-w-xl">
+          <p className="text-text-muted leading-relaxed text-sm">
+            Estudante de Análise e Desenvolvimento de Sistemas na{" "}
+            <span className="text-text-primary">Unifanor WYDEN</span> e Desenvolvedor
+            Full-Stack com experiência em desenvolvimento web e mobile.
+          </p>
+          <p className="text-text-muted leading-relaxed text-sm">
+            Projeto e implemento soluções digitais escaláveis com foco em{" "}
+            <span className="text-text-primary">performance, usabilidade e impacto</span>. Minha
+            stack inclui React, React Native, TypeScript, Python e Node.js — do design de
+            arquitetura ao deploy.
+          </p>
+          <p className="text-text-muted leading-relaxed text-sm">
+            Minha principal competência é transformar lacunas operacionais em soluções
+            estruturadas orientadas a tecnologia. Se há ineficiência em um processo, sistema ou
+            fluxo de trabalho,{" "}
+            <span className="text-text-primary">eu construo o mecanismo para resolver.</span>
+          </p>
 
-          I design and implement scalable digital solutions focused on performance, usability, and business impact. My technical stack includes React, React Native, JavaScript, Python, and Node.js, enabling end-to-end product development — from architecture design to deployment.
-
-          My core competency is translating operational gaps into structured, technology-driven solutions. If there is inefficiency, rework, or lack of integration within a process, system, or workflow, I build the mechanism to resolve it.
-
-          I operate with a continuous improvement mindset, combining engineering fundamentals with practical execution to deliver measurable results.
-        </span>
-
-        <section className="flex lg:gap-10 justify-between gap-2">
-          <GotoBtn
-            link
-            goto="https://drive.google.com/file/d/1ta1-8-tO8oahJcQoiOpZZww547-OuOZZ/view?usp=sharing"
-            class="px-[15%] "
-          >
+          <Button href={personal.resume} external className="self-start mt-2">
+            <MdFileDownload size={17} />
             Resume
-          </GotoBtn>
-        </section>
-      </section>
-    </section>
-  );
-};
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 export default About;

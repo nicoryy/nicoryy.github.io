@@ -4,5 +4,143 @@
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("/fonts/JetBrains\ Mono/JetBrainsMono-Medium.woff2");
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-ThinItalic.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrains Mono/JetBrainsMono-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0F0D1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #7B3FF5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9B6BFF;
+}
+
+/* Text selection */
+::selection {
+  background: #7B3FF5;
+  color: #F0EEF8;
+}
+
+/* Dot pattern — used in Hero */
+.dot-pattern {
+  background-image: radial-gradient(circle, #1E1A2E 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Typewriter cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  background-color: #7B3FF5;
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+/* Available badge pulse */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Purple ambient glow blobs */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
 }
