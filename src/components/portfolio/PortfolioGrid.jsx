@@ -1,13 +1,12 @@
 import ProjectCard from "./ProjectCard";
+import { useLang } from "../../hooks/useLang";
 
-const TABS = [
-  { label: "All", value: "all" },
-  { label: "Web", value: "web" },
-  { label: "Mobile", value: "mobile" },
-  { label: "Desktop", value: "desktop" },
-];
+const TAB_KEYS = ["tab_all", "tab_web", "tab_mobile", "tab_desktop"];
+const TAB_VALUES = ["all", "web", "mobile", "desktop"];
 
 const PortfolioGrid = ({ data, activeTab, onTabChange, loading }) => {
+  const { t } = useLang();
+
   const projects =
     activeTab === "all"
       ? [...(data.web || []), ...(data.mobile || []), ...(data.desktop || [])]
@@ -17,17 +16,17 @@ const PortfolioGrid = ({ data, activeTab, onTabChange, loading }) => {
     <div>
       {/* Tabs */}
       <div className="flex gap-2 mb-10 flex-wrap">
-        {TABS.map((tab) => (
+        {TAB_KEYS.map((key, i) => (
           <button
-            key={tab.value}
-            onClick={() => onTabChange(tab.value)}
+            key={TAB_VALUES[i]}
+            onClick={() => onTabChange(TAB_VALUES[i])}
             className={`px-4 py-1.5 rounded-md text-sm transition-all duration-200 ${
-              activeTab === tab.value
+              activeTab === TAB_VALUES[i]
                 ? "bg-primary text-white shadow-glow-primary"
                 : "text-text-muted border border-border hover:text-text-primary hover:border-primary/50"
             }`}
           >
-            {tab.label}
+            {t("portfolio", key)}
           </button>
         ))}
       </div>
@@ -43,7 +42,7 @@ const PortfolioGrid = ({ data, activeTab, onTabChange, loading }) => {
           ))}
         </div>
       ) : projects.length === 0 ? (
-        <p className="text-text-muted text-sm">Nenhum projeto encontrado.</p>
+        <p className="text-text-muted text-sm">{t("portfolio", "empty")}</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project) => (

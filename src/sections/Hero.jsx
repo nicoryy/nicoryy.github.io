@@ -1,5 +1,6 @@
 import { useReducer, useEffect } from "react";
 import { personal } from "../data/personal";
+import { useLang } from "../hooks/useLang";
 import Button from "../components/ui/Button";
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import { MdEmail } from "react-icons/md";
@@ -56,6 +57,7 @@ const useTypewriter = (words, typeSpeed = 80, deleteSpeed = 40, pauseTime = 2200
 };
 
 const Hero = () => {
+  const { t } = useLang();
   const typed = useTypewriter(personal.roles);
 
   return (
@@ -70,7 +72,8 @@ const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 w-full pt-16">
         {/* Comment label */}
         <p className="text-text-muted text-sm mb-4 font-medium tracking-wide">
-          <span className="text-primary font-bold">{"// "}</span>hello world
+          <span className="text-primary font-bold">{"// "}</span>
+          {t("hero", "greeting")}
         </p>
 
         {/* Name */}
@@ -89,7 +92,7 @@ const Hero = () => {
 
         {/* CTAs */}
         <div className="flex flex-wrap items-center gap-4 mb-14">
-          <Button href="#portfolio">Ver Projetos</Button>
+          <Button href="#portfolio">{t("hero", "cta_projects")}</Button>
           <Button href={personal.social.github} external variant="outline">
             <FiGithub size={15} />
             GitHub
@@ -98,7 +101,9 @@ const Hero = () => {
 
         {/* Social links */}
         <div className="flex items-center gap-5">
-          <span className="text-text-muted text-xs tracking-widest uppercase">find me on</span>
+          <span className="text-text-muted text-xs tracking-widest uppercase">
+            {t("hero", "find_me")}
+          </span>
           <div className="w-px h-4 bg-border" />
           <div className="flex gap-4">
             <a

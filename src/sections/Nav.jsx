@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { useScroll } from "../hooks/useScroll";
-import { navLinks } from "../data/personal";
+import { useLang } from "../hooks/useLang";
 import { IoIosClose, IoIosMenu } from "react-icons/io";
 import { FaArrowUp } from "react-icons/fa";
+
+const NAV_KEYS = ["home", "about", "portfolio", "stack"];
+const NAV_HREFS = ["#hero", "#about", "#portfolio", "#stack"];
 
 const Nav = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const scrolled = useScroll(80);
   const showScrollTop = useScroll(300);
+  const { lang, toggleLang, t } = useLang();
 
   return (
     <>
@@ -29,25 +33,34 @@ const Nav = () => {
 
           {/* Desktop links */}
           <ul className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
+            {NAV_KEYS.map((key, i) => (
+              <li key={key}>
                 <a
-                  href={link.href}
+                  href={NAV_HREFS[i]}
                   className="text-sm text-text-muted hover:text-text-primary transition-colors duration-300"
                 >
-                  {link.label}
+                  {t("nav", key)}
                 </a>
               </li>
             ))}
           </ul>
 
-          {/* Desktop CTA */}
-          <a
-            href="mailto:pedronicory@gmail.com"
-            className="hidden lg:inline-flex items-center gap-2 px-5 py-2 text-sm border border-primary text-primary rounded-md hover:bg-primary hover:text-white transition-all duration-300"
-          >
-            Contact
-          </a>
+          {/* Desktop actions */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={toggleLang}
+              className="px-3 py-1.5 text-xs text-text-muted border border-border rounded-md hover:text-text-primary hover:border-primary/50 transition-all duration-300 tracking-widest"
+              aria-label="Toggle language"
+            >
+              {lang === "en" ? "PT" : "EN"}
+            </button>
+            <a
+              href="mailto:pedronicory@gmail.com"
+              className="px-5 py-2 text-sm border border-primary text-primary rounded-md hover:bg-primary hover:text-white transition-all duration-300"
+            >
+              {t("nav", "contact")}
+            </a>
+          </div>
 
           {/* Mobile toggle */}
           <button
@@ -62,29 +75,35 @@ const Nav = () => {
         {/* Mobile menu */}
         <div
           className={`lg:hidden absolute top-16 left-0 right-0 bg-surface border-b border-border transition-all duration-300 overflow-hidden ${
-            isMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+            isMenuOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <ul className="flex flex-col px-6 py-4 gap-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
+            {NAV_KEYS.map((key, i) => (
+              <li key={key}>
                 <a
-                  href={link.href}
+                  href={NAV_HREFS[i]}
                   onClick={() => setMenuOpen(false)}
                   className="text-text-muted hover:text-text-primary transition-colors duration-300 block py-1 text-sm"
                 >
-                  {link.label}
+                  {t("nav", key)}
                 </a>
               </li>
             ))}
-            <li>
+            <li className="flex items-center gap-3 pt-1">
               <a
                 href="mailto:pedronicory@gmail.com"
                 onClick={() => setMenuOpen(false)}
-                className="text-primary hover:text-primary-hover transition-colors duration-300 block py-1 text-sm"
+                className="text-primary hover:text-primary-hover transition-colors duration-300 text-sm"
               >
-                Contact
+                {t("nav", "contact")}
               </a>
+              <button
+                onClick={toggleLang}
+                className="px-3 py-1 text-xs text-text-muted border border-border rounded-md hover:text-text-primary hover:border-primary/50 transition-all duration-300 tracking-widest"
+              >
+                {lang === "en" ? "PT" : "EN"}
+              </button>
             </li>
           </ul>
         </div>

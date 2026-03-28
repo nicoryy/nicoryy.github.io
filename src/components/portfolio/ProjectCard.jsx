@@ -1,9 +1,11 @@
 import { FiGithub } from "react-icons/fi";
+import { useLang } from "../../hooks/useLang";
 
 const CATEGORY_TOPICS = new Set(["web", "mobile", "desktop"]);
 
 const ProjectCard = ({ name, description, url, profileImage, topics = [] }) => {
-  const techTags = topics.filter((t) => !CATEGORY_TOPICS.has(t));
+  const { t } = useLang();
+  const techTags = topics.filter((topic) => !CATEGORY_TOPICS.has(topic));
 
   return (
     <article className="group flex flex-col bg-surface border border-border rounded-xl overflow-hidden hover:border-primary hover:shadow-glow-card transition-all duration-300">
@@ -28,7 +30,7 @@ const ProjectCard = ({ name, description, url, profileImage, topics = [] }) => {
           </span>
         </div>
 
-        {/* Hover overlay with GitHub link */}
+        {/* Hover overlay */}
         <div className="absolute inset-0 bg-base/75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <a
             href={url}
@@ -38,7 +40,7 @@ const ProjectCard = ({ name, description, url, profileImage, topics = [] }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <FiGithub size={16} />
-            Ver repositório
+            {t("portfolio", "view_repo")}
           </a>
         </div>
       </div>
