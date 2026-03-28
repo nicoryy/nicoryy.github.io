@@ -6,7 +6,8 @@
       "Bash(npm install:*)",
       "Bash(sed -i 's|from \"\"../context/LangContext\"\"|from \"\"../hooks/useLang\"\"|g' src/sections/About.jsx src/sections/Footer.jsx src/sections/Hero.jsx src/sections/Nav.jsx src/sections/Portfolio.jsx src/sections/TechStack.jsx)",
       "Bash(sed -i 's|from \"\"../../context/LangContext\"\"|from \"\"../../hooks/useLang\"\"|g' src/components/portfolio/PortfolioGrid.jsx src/components/portfolio/ProjectCard.jsx)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(npm audit:*)"
     ]
   }
 }
