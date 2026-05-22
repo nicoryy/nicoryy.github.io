@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-display: "JetBrains Mono", monospace;
+
+  --color-base: #08070E;
+  --color-surface: #0F0D1A;
+  --color-elevated: #161226;
+  --color-border: #1E1A2E;
+  --color-primary: #7B3FF5;
+  --color-primary-hover: #9B6BFF;
+  --color-accent: #C084FC;
+  --color-text-primary: #F0EEF8;
+  --color-text-muted: #9B97B0;
+
+  --breakpoint-2xs: 320px;
+  --breakpoint-xs: 426px;
+
+  --shadow-glow-primary: 0 0 24px rgba(123, 63, 245, 0.4);
+  --shadow-glow-card: 0 0 32px rgba(123, 63, 245, 0.15);
+}
 
 @font-face {
   font-family: "JetBrains Mono";
