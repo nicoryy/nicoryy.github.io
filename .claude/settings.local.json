@@ -9,7 +9,8 @@
       "Bash(cd:*)",
       "Bash(npm audit:*)",
       "mcp__a482cfdf-cab8-4a2d-a97e-ad651f280286__start-editing-transaction",
-      "mcp__a482cfdf-cab8-4a2d-a97e-ad651f280286__perform-editing-operations"
+      "mcp__a482cfdf-cab8-4a2d-a97e-ad651f280286__perform-editing-operations",
+      "mcp__a482cfdf-cab8-4a2d-a97e-ad651f280286__commit-editing-transaction"
     ]
   }
 }
