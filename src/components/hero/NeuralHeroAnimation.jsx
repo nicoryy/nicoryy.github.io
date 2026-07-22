@@ -103,8 +103,8 @@ function fibonacciSphere(n, R) {
   }
   return pts;
 }
-const SPHERE_N = 22;
-const SPHERE_PTS = fibonacciSphere(SPHERE_N, 200);
+const SPHERE_N = 28;
+const SPHERE_PTS = fibonacciSphere(SPHERE_N, 300);
 const TECH_IDX = [1, 4, 8, 12, 16, 19];
 const TECH_OFFSETS = [
   { dx: 50, dy: -6 },
@@ -121,7 +121,7 @@ for (let i = 0; i < SPHERE_N; i++) {
 }
 const RING = (() => {
   const n = 48;
-  const R = 200;
+  const R = 300;
   const rings = [];
   for (let k = 0; k < 2; k++) {
     const pts = [];
@@ -153,10 +153,10 @@ function NeuralGlobeScene({ progress }) {
   const [hover, setHover] = useState(null);
   const cx = 640;
   const cy = 400;
-  const focal = 620;
+  const focal = 600;
   const env = envelope(progress, 0, 0.16, 0.84, 1);
-  const rotY = progress * 1.25 + 0.4;
-  const tiltX = 0.34;
+  const rotY = progress * 1.25 + 0.8;
+  const tiltX = 0.70;
 
   const projPts = SPHERE_PTS.map((p) => project3d(p, rotY, tiltX, cx, cy, focal));
   const ringPaths = RING.map((ring) => ring.map((p) => project3d(p, rotY, tiltX, cx, cy, focal)));
@@ -285,54 +285,86 @@ function GeoGraphScene({ progress }) {
   return (
     <>
       <Backdrop id="hg2" />
-      <g transform={`translate(${tx},${ty}) scale(${s})`}>
-        <g transform={`translate(${MAP_ORIGIN.x},${MAP_ORIGIN.y})`}>
-          <path
-            d={CEARA_PATH}
-            fill="rgba(123,63,245,0.05)"
-            stroke={ACCENT}
-            strokeWidth={1.3}
-            strokeOpacity={env}
-            strokeDasharray={dash}
-            strokeDashoffset={draw * dash}
-            strokeLinejoin="round"
-          />
-          {GRAPH_EDGES.map(([a, b], i) => (
-            <line
-              key={`e${i}`}
-              x1={GRAPH_NODES[a].x}
-              y1={GRAPH_NODES[a].y}
-              x2={GRAPH_NODES[b].x}
-              y2={GRAPH_NODES[b].y}
+      <defs>
+        <radialGradient id="geo-fade-gradient" r="60%">
+          <stop offset="0%" stopColor="#fff" stopOpacity="1" />
+          <stop offset="65%" stopColor="#fff" stopOpacity="1" />
+          <stop offset="85%" stopColor="#fff" stopOpacity="0" />
+          <stop offset="90%" stopColor="#fff" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="geo-ring-gradient" r="0%">
+          <stop offset="0%" stopColor="#fff" stopOpacity="0" />
+          <stop offset="55%" stopColor="#fff" stopOpacity="0" />
+          <stop offset="75%" stopColor="#fff" stopOpacity="1" />
+          <stop offset="95%" stopColor="#fff" stopOpacity="0" />
+          <stop offset="100%" stopColor="#fff" stopOpacity="0" />
+        </radialGradient>
+        <mask id="geo-fade-mask" maskUnits="userSpaceOnUse" x="-5" y="-150" width="1680" height="1120">
+          <rect x="0" y="0" width="1280" height="720" fill="url(#geo-fade-gradient)" />
+        </mask>
+        <mask id="geo-ring-mask" maskUnits="userSpaceOnUse" x="-5" y="-150" width="1680" height="1120">
+          <rect x="0" y="0" width="1280" height="720" fill="url(#geo-ring-gradient)" />
+        </mask>
+        <filter id="geo-edge-blur" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="9" />
+        </filter>
+        <g id="geo-zoom-content" transform={`translate(${tx},${ty}) scale(${s})`}>
+          <g transform={`translate(${MAP_ORIGIN.x},${MAP_ORIGIN.y})`}>
+            <path
+              d={CEARA_PATH}
+              fill="rgba(123,63,245,0.05)"
               stroke={ACCENT}
-              strokeWidth={0.7}
-              strokeOpacity={env * 0.4}
+              strokeWidth={1.3}
+              strokeOpacity={env}
+              strokeDasharray={dash}
+              strokeDashoffset={draw * dash}
+              strokeLinejoin="round"
             />
-          ))}
-          {GRAPH_NODES.map((n, i) => (
-            <g key={`n${i}`} opacity={env}>
-              <circle cx={n.x} cy={n.y} r={n.r} fill={n.hub ? WHITE : ACCENT} />
-              {n.hub && (
-                <text
-                  x={n.x + 8}
-                  y={n.y - 8}
-                  fontFamily="ui-monospace,Menlo,monospace"
-                  fontSize={10}
-                  fill={WHITE}
-                  letterSpacing={0.5}
-                >
-                  {n.label.toUpperCase()}
-                </text>
-              )}
-            </g>
-          ))}
-          {ZOOM_NODES.map((n, i) => (
-            <g key={`z${i}`} opacity={zoomT}>
-              <circle cx={n.x} cy={n.y} r={2.4} fill={ACCENT} />
-              <Tooltip x={n.x + n.dx} y={n.y + n.dy} w={n.label.length * 7 + 18} label={n.label} />
-            </g>
-          ))}
+            {GRAPH_EDGES.map(([a, b], i) => (
+              <line
+                key={`e${i}`}
+                x1={GRAPH_NODES[a].x}
+                y1={GRAPH_NODES[a].y}
+                x2={GRAPH_NODES[b].x}
+                y2={GRAPH_NODES[b].y}
+                stroke={ACCENT}
+                strokeWidth={0.7}
+                strokeOpacity={env * 0.4}
+              />
+            ))}
+            {GRAPH_NODES.map((n, i) => (
+              <g key={`n${i}`} opacity={env}>
+                <circle cx={n.x} cy={n.y} r={n.r} fill={n.hub ? WHITE : ACCENT} />
+                {n.hub && (
+                  <text
+                    x={n.x + 8}
+                    y={n.y - 8}
+                    fontFamily="ui-monospace,Menlo,monospace"
+                    fontSize={10}
+                    fill={WHITE}
+                    letterSpacing={0.5}
+                  >
+                    {n.label.toUpperCase()}
+                  </text>
+                )}
+              </g>
+            ))}
+            {ZOOM_NODES.map((n, i) => (
+              <g key={`z${i}`} opacity={zoomT}>
+                <circle cx={n.x} cy={n.y} r={2.4} fill={ACCENT} />
+                <Tooltip x={n.x + n.dx} y={n.y + n.dy} w={n.label.length * 7 + 18} label={n.label} />
+              </g>
+            ))}
+          </g>
         </g>
+      </defs>
+      <g mask="url(#geo-ring-mask)">
+        <g filter="url(#geo-edge-blur)">
+          <use href="#geo-zoom-content" />
+        </g>
+      </g>
+      <g mask="url(#geo-fade-mask)">
+        <use href="#geo-zoom-content" />
       </g>
     </>
   );
@@ -395,10 +427,10 @@ function MobileAppScene({ progress }) {
   const handOpacity = Math.max(handOn1, handOn2);
   const handPhase = progress < 0.4 ? handOn1 : handOn2;
 
-  const px = 500;
-  const py = 150;
-  const PW = 280;
-  const PH = 480;
+  const px = 400;
+  const py = 20;
+  const PW = 380;
+  const PH = 680;
 
   const cardRow = (y, wTitle, wLine, key) => (
     <g key={key}>

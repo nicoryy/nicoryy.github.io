@@ -138,9 +138,9 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Col 2 */}  
-        <div className="h-full">
-          <NeuralHeroAnimation className="hidden lg:block w-[300px] xl:w-[380px] shrink-0 h-full" />
+        {/* Col 2 */}
+        <div className="w-full">
+          <NeuralHeroAnimation className="hidden lg:block w-[620px] shrink-0 aspect-video" />
         </div>
       </div>
 
